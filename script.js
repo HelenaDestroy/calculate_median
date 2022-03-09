@@ -1,51 +1,54 @@
-let median;
-const list = [];
+const list = []; // list[m]= ei with a for cycle to add infinite elements, for var i of list.. input "how many elements in list"?
 const elemento1 = document.getElementById("elemento1");
 const elemento2 = document.getElementById("elemento2");
 const elemento3 = document.getElementById("elemento3");
 const elemento4 = document.getElementById("elemento4");
 const elemento5 = document.getElementById("elemento5");
 
-// list[m]= ei; ciclo for  to add infinite elements. for var i of list..
 const b = document.getElementById("button");
 b.addEventListener("click", calcularMediana);
 
-function calcularMediana(){
+const lista = list.length / 2;
+let median;
+
+function esPar(lista) 
+{
+    if (lista %2 === 0 ) 
+    {
+    return true;
+    }   
+    else 
+    {
+    return false;
+    } 
+}
+function calcularMediana()
+{
     list[0]= parseInt(elemento1.value);
     list[1]= parseInt(elemento2.value);
     list[2]= parseInt(elemento3.value);
     list[3]= parseInt(elemento4.value);
     list[4]= parseInt(elemento5.value);
-    const lista= list.length / 2;
- 
-    function esPar(lista)
+   
+    function calcularMediaAritmetica()
     {
-        if (lista %2 === 0 ) 
-        {
-        return true;
-        }   
-        else 
-        {
-        return false;
-        } 
-    function calcularMediaAritmetica(list)
-        {
-        const sumaLista = list.reduce (function (valorAcumulado = 0, nuevoElemento) {
-        return valorAcumulado + nuevoElemento;});
-        const medianaLista = sumaLista / list.length;          
-        return medianaLista;
-        }
+    const sumList = list.reduce (function (accumulatedValue = 0, newElement){
+    return accumulatedValue + newElement;});
+    const middleList = sumList / 2          
+    return middleList    
     }
-    if (esPar(list.length))
-    {
-    const elemento1 = lista[medianaLista - 1];
-    const elemento2 = lista[medianaLista];
-    const promedioElemento1y2 = calcularMediaAritmetica([elemento1, elemento2, ]);
-    mediana = promedioElemento1y2;
-    }   
+
+    esPar(lista);  
+    if (esPar(lista))
+        {
+        const element_1 = list[lista - 1];
+        const element_2 = list[lista];
+        const element1y2 = calcularMediaAritmetica([element_1, element_2, ]);
+        median = element1y2;
+        }   
     else 
     {    
-    mediana = lista[parseInt(mitadLista)];    
+    median = middleList;    
     }
-    alert("the median is " + mediana);
+document.getElementById("result").innerHTML= "the median is " + median;
 }
