@@ -4,7 +4,6 @@ const elemento2 = document.getElementById("elemento2");
 const elemento3 = document.getElementById("elemento3");
 const elemento4 = document.getElementById("elemento4");
 const elemento5 = document.getElementById("elemento5");
-
 const b = document.getElementById("button");
 b.addEventListener("click", calcularMediana);
 
