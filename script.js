@@ -29,7 +29,7 @@ function calcularMediana()
     list[2]= parseInt(elemento3.value);
     list[3]= parseInt(elemento4.value);
     list[4]= parseInt(elemento5.value);
-   
+    list.sort();
     function calcularMediaAritmetica()
     {
     const sumList = list.reduce (function (accumulatedValue = 0, newElement){
@@ -50,5 +50,6 @@ function calcularMediana()
     {    
     median = middleList;    
     }
-document.getElementById("result").innerHTML= "the median is " + median;
+
+document.getElementById("result").innerHTML= "the median is " + median + "<br/> sorted list:"+ list;
 }
